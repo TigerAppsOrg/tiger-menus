@@ -63,7 +63,6 @@ hallToId = OrderedDict([
     ('Whitman',     '08'),
     ('Ro / Ma',     '01'),
     ('Forbes',      '03'),
-    ('Yeh',         '06'),
     ('Grad',        '04'),
 ])
 
