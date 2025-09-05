@@ -40,7 +40,7 @@ def scrapeHall(url):
 
     b = "Breakfast"
     l = "Lunch"
-    d = ["Dinner", "Din"]
+    d = "Din"
 
     try:
         html = requests.get(url).text
@@ -55,12 +55,12 @@ def scrapeHall(url):
                 else:
                     formatted_items.append(item.text.strip())
             items = floatMainEntrees(formatted_items)
-            if mealName == b:
-                breakfast = [b] + items
-            elif mealName == l:
-                lunch = [l] + items
-            elif mealName in d:
-                dinner = ["Dinner"] + items
+            if b in mealName:
+                breakfast = [mealName] + items
+            elif l in mealName:
+                lunch = [mealName] + items
+            elif d in mealName:
+                dinner = [mealName] + items
     except Exception as e:
         print(e)
         return ['Error'], ['Error'], ['Error']
