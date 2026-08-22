@@ -69,7 +69,7 @@ def scrapeHall(url):
 
 
 hallToId = OrderedDict([
-    ('Yeh',         '06'),
+    ('Huo/Yeh',     '06'),
     ('CJL',         '05'),
     ('Whitman',     '08'),
     ('Ro / Ma',     '01'),
