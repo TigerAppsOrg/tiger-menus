@@ -35,7 +35,7 @@ function updateHallRail() {
   if (!visible) return;
   let active = 0;
   hallHeadings.forEach((heading, index) => {
-    if (heading.getBoundingClientRect().top <= innerHeight * 0.3) active = index;
+    if (heading.getBoundingClientRect().top <= 24) active = index;
   });
   if (scrollY + innerHeight >= document.documentElement.scrollHeight - 4) active = hallHeadings.length - 1;
   hallNav.style.setProperty('--hall-index', active);
