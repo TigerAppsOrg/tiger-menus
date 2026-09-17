@@ -1,6 +1,6 @@
 # TigerMenus ![icon](https://github.com/axu2/tiger-menus/blob/master/app/static/favicons/favicon-32x32.png?raw=true)
 
-[TigerMenus](https://tigermenus.herokuapp.com/) is a web application started in 2017 that presents Princeton dining hall menu options **organized by meal**, unlike the official dining hall website.
+[TigerMenus](https://menus.tigerapps.org/) is a web application started in 2017 that presents Princeton dining hall menu options **organized by meal**, unlike the official dining hall website.
 
 It solves the problem of needing to open 6 different websites just to compare menu options!
 
@@ -14,11 +14,11 @@ Through their phone's default web browser, anyone on iOS, Android, and even Wind
 
 <img width=250 src="https://raw.githubusercontent.com/axu2/tiger_menus/master/app/static/iphoneicon.png"/><img width=250 src="https://raw.githubusercontent.com/axu2/tiger_menus/master/app/static/androidicon.png"/><img width=250 src="https://raw.githubusercontent.com/axu2/tiger_menus/master/app/static/windows.png"/>
 
-On mobile, it's a simple scrolling interace, since scrolling is faster than clicking.
+On mobile, browse all dining halls in one scrolling menu. A floating navigator appears as you scroll, highlights the current hall, and lets you jump between halls. Desktop keeps the side-by-side view. Installation help and other dining resources are available in the compact footer.
 
 <img width=300 src="https://raw.githubusercontent.com/axu2/tiger_menus/master/app/static/iphone.png"/>
 
-Hosted at https://tigermenus.herokuapp.com/
+Hosted at https://menus.tigerapps.org/
 
 # Testimonials
 

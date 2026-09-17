@@ -1,58 +1,61 @@
 {% extends "base.html" %}
 
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+{% endblock %}
+
 {% block app_content %}
 
 <div class="container">
   <div class="row">
     {% for name, items in cols %}
-    <div class="col-sm-2">
-      <h3>{{ name }}</h3>
+    <section class="col-sm-2 dining-hall">
+      <h2 id="hall-{{ loop.index }}" tabindex="-1" data-hall-name="{{ name }}">{{ name }}{% if name == 'Choi' %} <small class="hall-alias">(Huo/Yeh)</small>{% endif %}</h2>
       {% for item in items %}
       {% if item[0] == "-" %}
-      <p><b>{{ item }}</b></p>
+      <h3 class="menu-station">{{ item.strip('- ') }}</h3>
+      {% elif loop.first %}
+      <p class="menu-note">{{ item }}</p>
       {% else %}
-      <p>{{ item }}</p>
+      <p class="menu-dish">{{ item }}</p>
       {% endif %}
       {% endfor %}
-    </div>
+    </section>
     {% endfor %}
   </div>
 </div>
 
-<hr>
+<footer class="container menu-footer">
+  <nav class="footer-links" aria-label="Dining resources">
+    <a href="https://dining.princeton.edu/where-eat/hours-operation">Dining hours</a>
+    <a href="https://services.jsatech.com/login.php?cid=69">TigerCard balance</a>
+    <a href="https://lunchtogo.princeton.edu/">Bag lunch</a>
+  </nav>
+  <details class="footer-details menu-disclosure">
+    <summary>Add to Home Screen</summary>
+    <div class="disclosure-body">
+      <p>Open the <a href="/">homepage</a>. In Safari, open Share; in Chrome on Android, open the menu. Choose “Add to Home Screen.”</p>
+      <a href="/install">Step-by-step instructions</a>
+    </div>
+  </details>
+  <details class="footer-details menu-disclosure">
+    <summary>More resources</summary>
+    <div class="disclosure-body">
+      <p><a href="https://dining.princeton.edu/">Princeton Campus Dining</a></p>
+      <p>To join the freefood list, email “listserv at princeton dot edu” with “subscribe freefood” in the body.</p>
+    </div>
+  </details>
+  <nav class="footer-links footer-meta" aria-label="About TigerMenus">
+    <a href="/about">About</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd-i9YUoMUk_xJ6l3cNoSl04KKymQ8CAHID9CbwhJpgNn-2QQ/viewform?usp=sf_link">Feedback</a>
+    <a href="https://github.com/axu2/tiger-menus">GitHub</a>
+  </nav>
+</footer>
 
-<div class="container">
-  <footer>
-    <p>To add the site to your phone's homescreen, open the <a href="/">homepage</a></p>
-    <p>On iPhone, click the <img height="24" src="/static/action.png" /> button on the bottom of Safari</p>
-    <p>On Android, click on the <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span> button on the top right of Chrome</p>
-    <p>Click "Add to Home Screen" <img src="/static/favicons/favicon-32x32.png" /></p>
-  </footer>
-  <h4><b><a href="/install">Install Instructions (Screenshots)</a></b></h4>
-</div>
+{% endblock %}
 
-<hr>
-
-<div class="container">
-  <footer>
-    <p><a href="https://dining.princeton.edu/">Official Campus Dining Website</a></p>
-    <p>Order a <a href="https://lunchtogo.princeton.edu/">bag lunch!</a></p>
-    <p><a href="https://dining.princeton.edu/where-eat/hours-operation">Campus Dining Hours</a></p>
-    <p><a href="https://services.jsatech.com/login.php?cid=69">TigerCard Balance</a> (Swipes+Paw Points+Dining Points)</p>
-    <p>To get on freefood listserv, email "listserv at princeton dot edu" with "subscribe freefood" in the body.</p>
-  </footer>
-</div>
-
-<hr>
-
-<div class="container">
-  <footer>
-    <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSd-i9YUoMUk_xJ6l3cNoSl04KKymQ8CAHID9CbwhJpgNn-2QQ/viewform?usp=sf_link">
-        Feedback
-      </a></p>
-    <p><a href="https://github.com/axu2/tiger-menus">Code (GitHub)</a> Please contribute! Ideas/enhancements/bugs in the issues tab!</p>
-    <p><a href="/about">About</a></p>
-  </footer>
-</div>
-
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='menu.js') }}"></script>
 {% endblock %}
