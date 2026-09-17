@@ -7,7 +7,7 @@ hallNav.style.setProperty('--hall-count', hallHeadings.length);
 const hallLinks = hallHeadings.map(heading => {
   const link = document.createElement('a');
   link.href = `#${heading.id}`;
-  link.textContent = heading.textContent;
+  link.textContent = heading.dataset.hallName;
   link.addEventListener('click', event => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();

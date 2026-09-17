@@ -14,10 +14,11 @@ function element() {
   };
 }
 
-const headings = ['Huo/Yeh', 'CJL', 'Whitman'].map((name, index) => ({
-  ...element(), id: `hall-${index + 1}`, textContent: name, top: 0,
+const headings = ['Choi', 'CJL', 'Whitman'].map((name, index) => ({
+  ...element(), id: `hall-${index + 1}`, textContent: name, dataset: { hallName: name }, top: 0,
   getBoundingClientRect() { return { top: this.top }; }
 }));
+headings[0].textContent = 'Choi (Huo/Yeh)';
 const body = element();
 const context = vm.createContext({
   document: {
@@ -28,6 +29,8 @@ const context = vm.createContext({
   addEventListener() {}
 });
 vm.runInContext(readFileSync('app/static/menu.js', 'utf8'), context);
+
+assert.equal(body.children[0].children[0].textContent, 'Choi');
 
 for (const [tops, expected] of [
   [[16, 120, 220], 0], // short fallback halls below the selected heading

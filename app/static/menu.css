@@ -4,6 +4,7 @@
 .jumbotron p { margin-bottom: 8px; }
 .jumbotron p a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 4px; }
 .dining-hall h2 { font-size: 24px; font-weight: 600; margin: 20px 0 8px; }
+.dining-hall .hall-alias { font-size: 14px; font-weight: 400; color: #606870; white-space: nowrap; }
 .menu-note { color: #606870; font-size: 13px; }
 .menu-station { font-size: 13px; font-weight: 600; color: #606870; line-height: 1.5; margin: 24px 0 8px; }
 .menu-dish { line-height: 1.5; margin-bottom: 8px; }

@@ -11,7 +11,7 @@
   <div class="row">
     {% for name, items in cols %}
     <section class="col-sm-2 dining-hall">
-      <h2 id="hall-{{ loop.index }}" tabindex="-1">{{ name }}</h2>
+      <h2 id="hall-{{ loop.index }}" tabindex="-1" data-hall-name="{{ name }}">{{ name }}{% if name == 'Choi' %} <small class="hall-alias">(Huo/Yeh)</small>{% endif %}</h2>
       {% for item in items %}
       {% if item[0] == "-" %}
       <h3 class="menu-station">{{ item.strip('- ') }}</h3>
