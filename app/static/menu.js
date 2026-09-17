@@ -16,6 +16,7 @@ const hallLinks = hallHeadings.map(heading => {
       behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
       block: 'start'
     });
+    scheduleHallRail();
   });
   hallNav.append(link);
   return link;
@@ -37,7 +38,11 @@ function updateHallRail() {
   hallHeadings.forEach((heading, index) => {
     if (heading.getBoundingClientRect().top <= 24) active = index;
   });
-  if (scrollY + innerHeight >= document.documentElement.scrollHeight - 4) active = hallHeadings.length - 1;
+  if (scrollY + innerHeight >= document.documentElement.scrollHeight - 4) {
+    const focused = hallHeadings.indexOf(document.activeElement);
+    const top = focused >= 0 ? hallHeadings[focused].getBoundingClientRect().top : -1;
+    active = top >= 0 && top < innerHeight ? focused : hallHeadings.length - 1;
+  }
   hallNav.style.setProperty('--hall-index', active);
   hallLinks.forEach((link, index) => {
     if (index === active) link.setAttribute('aria-current', 'location');
