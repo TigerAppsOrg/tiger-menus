@@ -3,11 +3,11 @@
 .jumbotron p:empty { display: none; }
 .jumbotron p { margin-bottom: 8px; }
 .jumbotron p a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 4px; }
-.dining-hall h2 { font-size: 24px; font-weight: 600; margin: 20px 0 8px; }
+.dining-hall h2 { font-size: 24px; font-weight: 500; line-height: 1.1; margin: 20px 0 10px; }
 .dining-hall .hall-alias { font-size: 14px; font-weight: 400; color: #606870; white-space: nowrap; }
-.menu-note { color: #606870; font-size: 13px; }
-.menu-station { font-size: 13px; font-weight: 600; color: #606870; line-height: 1.5; margin: 24px 0 8px; }
-.menu-dish { line-height: 1.5; margin-bottom: 8px; }
+.menu-note { color: inherit; font-size: inherit; line-height: inherit; margin: 0 0 10px; }
+.menu-station { font-size: inherit; font-weight: 700; color: inherit; line-height: inherit; margin: 0 0 10px; }
+.menu-dish { line-height: inherit; margin: 0 0 10px; }
 .menu-footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e1e5e8; font-size: 14px; text-align: center; }
 .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 24px; }
 .footer-links a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -34,9 +34,6 @@
   .jumbotron h1 { font-size: 32px; margin-top: 8px; }
   .jumbotron p { font-size: 18px; margin-bottom: 0; }
   .jumbotron p a { padding: 0 5px; }
-  .dining-hall + .dining-hall { margin-top: 24px; padding-top: 8px; border-top: 1px solid #e1e5e8; }
-  .dining-hall h2 { font-size: 24px; }
-  .menu-note, .menu-station { font-size: 14px; }
   .menu-footer { margin-top: 32px; }
   .footer-links { gap: 0 20px; }
 }
