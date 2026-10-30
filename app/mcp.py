@@ -64,7 +64,7 @@ def check_args(args):
     day = args.get("day", 0)
     if type(day) is not int or not 0 <= day <= 6:
         return "day must be an integer from 0 (today) to 6"
-    if "meal" in args and args["meal"] not in MEALS:
+    if "meal" in args and (not isinstance(args["meal"], str) or args["meal"] not in MEALS):
         return f"meal must be one of: {', '.join(MEALS)}"
     halls = args.get("halls", [])
     if not isinstance(halls, list) or any(h not in HALLS for h in halls):
