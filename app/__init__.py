@@ -19,3 +19,5 @@ def _redirect_legacy_host():
         return redirect(target.rstrip("?"), code=301)
 
 from app import views  # noqa
+
+from app import mcp  # noqa
